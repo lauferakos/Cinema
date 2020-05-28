@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Foglalások: </h1>
+
+
+<p *ngIf="!orders"><em>Loading...</em></p>
+
+<a [routerLink]="['/tickets',userid]">
+  Jegyek
+</a>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="orders">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Film</th>
+      <th>Ár</th>
+      <th>Foglalt helyek</th>
+      <th>Idő</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id}}</td>
+      <td>{{ order.projection.film.title }}</td>
+      <td>{{ order.price }}</td>
+      <td>{{ order.reservedSeats }}</td>
+      <td>{{ order.projection.start }}</td>
+
+    </tr>
+  </tbody>
+</table>

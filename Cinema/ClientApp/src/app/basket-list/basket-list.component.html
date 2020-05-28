@@ -1,0 +1,33 @@
+
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="orders">
+  <thead>
+    <tr>
+      <th>Vetítés ID</th>
+      <th>Ár</th>
+      <th>Foglalt helyek</th>
+      <th>Néző ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.projectionId}}</td>
+      <td>{{ order.price}}</td>
+      <td>{{ order.reservedSeats}}</td>
+      <td>{{ order.viewerId}}</td>
+      <td>
+        <button (click)="cancelOrder(order.projectionId)" mat-button color="warn">
+          Mégse
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="fullprice > 0">
+  Teljes összeg: {{fullprice}}
+  <button (click)="acceptOrder()" mat-raised-button color="warn">Fizetés</button>
+</div>
+
+

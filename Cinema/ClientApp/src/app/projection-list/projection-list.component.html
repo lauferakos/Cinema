@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Vetítések: </h1>
+
+
+<p *ngIf="!projections"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="projections">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Terem</th>
+      <th>Kezdés</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let projection of projections">
+      <td>{{ projection.id}}</td>
+      <td>{{ projection.roomId }}</td>
+      <td>{{ projection.start }}</td>
+      <td>
+        <a [routerLink]="['/basket/add',projection.id,userid]">
+          Kosárba
+        </a>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cinema", "Cinema\Cinema.csproj", "{AD7DA7A9-CA6D-4924-BD18-6A32AEE5553F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{072BC766-BB9C-484F-B571-65B2E9AE8D4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD7DA7A9-CA6D-4924-BD18-6A32AEE5553F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7DA7A9-CA6D-4924-BD18-6A32AEE5553F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7DA7A9-CA6D-4924-BD18-6A32AEE5553F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7DA7A9-CA6D-4924-BD18-6A32AEE5553F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072BC766-BB9C-484F-B571-65B2E9AE8D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072BC766-BB9C-484F-B571-65B2E9AE8D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072BC766-BB9C-484F-B571-65B2E9AE8D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072BC766-BB9C-484F-B571-65B2E9AE8D4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4FE5A2F-8411-4AC5-9827-8EFCBC4ACAB4}
+	EndGlobalSection
+EndGlobal

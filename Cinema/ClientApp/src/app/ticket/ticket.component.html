@@ -1,0 +1,34 @@
+<div *ngIf="reservations && projections">
+    <div *ngFor="let reservation of reservations;let i = index">
+      <div *ngIf="projections[i] && reservations[i]">
+        <mat-card class="ticket-card">
+          <mat-card-header>
+            <mat-icon>movie</mat-icon>
+            <mat-card-title>{{projections[i].film.title}}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <table class='table table-striped' aria-labelledby="tableLabel">
+              <thead>
+                <tr>
+                  <th>Vetítés ID</th>
+                  <th>Kezdés</th>
+                  <th>Terem</th>
+                  <th>Hely</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{reservations[i].projectionId}}</td>
+                  <td>{{projections[i].start}}</td>
+                  <td>{{projections[i].roomId}}</td>
+                  <td>{{ reservations[i].row}}. sor {{reservations[i].column}}. oszlop</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+    </div>
+</div>

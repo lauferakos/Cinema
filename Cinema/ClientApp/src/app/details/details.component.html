@@ -1,0 +1,22 @@
+
+<div *ngIf="film">
+  <mat-card class="details-card">
+    <mat-card-header>
+      <div mat-card-avatar class="details-card-image">
+        <mat-icon>info</mat-icon>
+      </div>
+      <mat-card-title>{{film.title}}</mat-card-title>
+      <mat-card-subtitle>{{film.rating}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        {{film.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="backClicked()" mat-button>Vissza</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

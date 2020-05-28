@@ -1,0 +1,74 @@
+
+<div *ngIf="type">
+  {{type}}
+</div>
+
+<div *ngIf="id">
+  {{id}}
+</div>
+
+<div *ngIf="type == 'films' && film">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+      <label for="title">
+        Cím
+      </label>
+      <input id="title" type="text" formControlName="title" placeholder={{film.title}}>
+    </div>
+
+    <div>
+      <label for="director">
+        Rendező
+      </label>
+      <input id="director" type="text" formControlName="director" placeholder={{film.director}}>
+    </div>
+
+    <div>
+      <label for="description">
+        Leírás
+      </label>
+      <input id="description" type="text" formControlName="description" placeholder={{film.description}}>
+    </div>
+
+    <div>
+      <label for="rating">
+        Értékelés
+      </label>
+      <input id="rating" type="number" formControlName="rating" placeholder={{film.rating}}>
+    </div>
+
+    <button class="button" type="submit">Mentés</button>
+
+  </form>
+</div>
+
+<div *ngIf="type == 'projections' && projection">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+      <label for="filmId">
+        Film ID
+      </label>
+      <input id="filmId" type="text" formControlName="filmId" placeholder={{projection.filmId}}>
+    </div>
+
+    <div>
+      <label for="roomId">
+        Terem
+      </label>
+      <input id="roomId" type="text" formControlName="roomId" placeholder={{projection.roomId}}>
+    </div>
+
+    <div>
+      <label for="start">
+        Kezdés
+      </label>
+      <input id="start" type="date" formControlName="start" placeholder={{projection.start}}>
+    </div>
+
+
+    <button class="button" type="submit">Mentés</button>
+
+  </form>
+</div>

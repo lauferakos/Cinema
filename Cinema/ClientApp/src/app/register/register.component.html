@@ -1,0 +1,39 @@
+
+<div class="container">
+
+  <hr>
+
+  <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Regisztráció</h4>
+
+
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input name="name" class="form-control" placeholder="Felhasználónév" type="text" formControlName="name">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input name="password" class="form-control" placeholder="Jelszó" type="password" formControlName="password">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input name="password2" class="form-control" placeholder="Jelszó újra" type="password">
+        </div> <!-- form-group// -->
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary btn-block" value="Regisztrálás" />
+        </div> <!-- form-group// -->
+        <p class="text-center">Regisztráltál már? <a routerLink="/login">Lépj be</a> </p>
+      </form>
+    </article>
+  </div> <!-- card.// -->
+
+</div>

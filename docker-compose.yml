@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  cinema:
+    image: ${DOCKER_REGISTRY-}cinema
+    build:
+      context: .
+      dockerfile: C:\Users\laufe\source\repos\Cinema/Dockerfile
+    ports:
+       - "8080:80"
+       - "32769:443"
+    networks:
+       - searching-network
+
+    
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment: 
+        ACCEPT_EULA: "Y"
+        SA_PASSWORD: "A4s5dkw52+B!"
+        MSSQL_PID: Express
+    ports:
+     - "1433:1433"
+    networks:
+     - searching-network
+
+
+
+
+networks:
+  searching-network:
+    driver: bridge

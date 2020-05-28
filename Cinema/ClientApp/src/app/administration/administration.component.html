@@ -1,0 +1,145 @@
+<mat-form-field>
+  <mat-label>Válassz egy kategóriát</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option value="films">Filmek</mat-option>
+    <mat-option value="projections">Vetítések</mat-option>
+    <mat-option value="rooms">Termek</mat-option>
+    <mat-option value="orders">Foglalások</mat-option>
+    <mat-option value="viewers">Felhasználók</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button type="button" (click)="list(selected)" class="btn btn-primary">Keresés</button>
+
+<div *ngIf="selected !== 'viewers' && selected !=='orders'">
+  <a [routerLink]="['/add', selected]" mat-button>Hozzáad</a>
+</div>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="films && selected == 'films'">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cím</th>
+      <th>Rendező</th>
+      <th>Leírás</th>
+      <th>Értékelés</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let film of films">
+      <td>{{ film.id}}</td>
+      <td>{{ film.title}}</td>
+      <td>{{ film.director }}</td>
+      <td>{{ film.description }}</td>
+      <td>{{ film.rating }}</td>
+      <td>
+        <a [routerLink]="['/edit', selected,film.id]" mat-button>Módosít</a>
+        <button (click)="deleteFilm(film.id)" mat-button color="warn">
+          Törlés
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="projections && selected == 'projections'">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Film ID</th>
+      <th>Terem</th>
+      <th>Kezdés</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let projection of projections">
+      <td>{{ projection.id}}</td>
+      <td>{{ projection.filmId}}</td>
+      <td>{{ projection.roomId }}</td>
+      <td>{{ projection.start }}</td>
+      <td>
+        <a [routerLink]="['/edit', selected,projection.id]" mat-button>Módosít</a>
+        <button (click)="deleteProjection(projection.id)" mat-button color="warn">
+          Törlés
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="orders && selected == 'orders'">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vetítés ID</th>
+      <th>Ár</th>
+      <th>Foglalt helyek</th>
+      <th>Néző ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id}}</td>
+      <td>{{ order.projectionId}}</td>
+      <td>{{ order.price }}</td>
+      <td>{{ order.reservedSeats }}</td>
+      <td>{{ order.viewerId}}</td>
+      <td>
+        <button (click)="deleteOrder(order.id)" mat-button color="warn">
+          Törlés
+        </button>
+
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="rooms && selected == 'rooms'">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Férőhely</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let room of rooms">
+      <td>{{ room.id}}</td>
+      <td>{{ room.capacity}}</td>
+
+      <td>
+        <a [routerLink]="['/edit', selected,room.id]" mat-button>Módosít</a>
+        <button (click)="deleteRoom(room.id)" mat-button color="warn">
+          Törlés
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="viewers && selected == 'viewers'">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Név</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let viewer of viewers">
+      <td>{{ viewer.id}}</td>
+      <td>{{ viewer.name}}</td>
+  
+
+      <td>
+        <button (click)='deleteViewer(viewer.id)' mat-button color="warn">
+          Törlés
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

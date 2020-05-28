@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <span><mat-icon>movie</mat-icon>Cinema</span>
+
+
+  <div class="spacer"></div>
+  <a routerLink="/" mat-button>Kezdőlap</a>
+  <a routerLink="/film" mat-button>Keresés</a>
+  <button type="button" (click)="ShowBasket()" class="btn btn-primary" id="gomb">Kosaram</button>
+  <button type="button" (click)="ShowReservation()" class="btn btn-primary" id="gomb">Foglalásaim</button>
+  <a routerLink="/administration" mat-button>Admin</a>
+  <a routerLink="/logout" mat-button>Kijelentkezés</a>
+
+</mat-toolbar>

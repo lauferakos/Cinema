@@ -1,0 +1,81 @@
+<div *ngIf="type">{{type}}</div>
+
+<div *ngIf="type == 'films'">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+      <label for="title">
+        Cím
+      </label>
+      <input id="title" type="text" formControlName="title">
+    </div>
+
+    <div>
+      <label for="director">
+        Rendező
+      </label>
+      <input id="director" type="text" formControlName="director">
+    </div>
+
+    <div>
+      <label for="description">
+        Leírás
+      </label>
+      <input id="description" type="text" formControlName="description">
+    </div>
+
+    <div>
+      <label for="rating">
+        Értékelés
+      </label>
+      <input id="rating" type="number" formControlName="rating">
+    </div>
+
+    <button class="button" type="submit">Mentés</button>
+
+  </form>
+</div>
+<div *ngIf="type == 'projections'">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+      <label for="filmId">
+        Film ID
+      </label>
+      <input id="filmdId" type="number" formControlName="filmId">
+    </div>
+
+    <div>
+      <label for="roomId">
+        Terem ID
+      </label>
+      <input id="roomId" type="number" formControlName="roomId">
+    </div>
+
+    <div>
+      <label for="start">
+        Időpont
+      </label>
+      <input id="start" type="datetime" formControlName="start">
+    </div>
+
+    <button class="button" type="submit">Mentés</button>
+
+  </form>
+</div>
+
+<div *ngIf="type == 'rooms'">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+      <label for="capacity">
+        Férőhelyek
+      </label>
+      <input id="capacity" type="number" formControlName="capacity">
+    </div>
+
+ 
+    <button class="button" type="submit">Mentés</button>
+
+  </form>
+</div>

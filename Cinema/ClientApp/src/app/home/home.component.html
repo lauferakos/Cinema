@@ -1,0 +1,31 @@
+
+<h1 id="tableLabel">Legnépszerűbb Filmek</h1>
+
+
+<p *ngIf="!films"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="films">
+  <thead>
+    <tr>
+      <th>Cím</th>
+      <th>Rendező</th>
+      <th>Értékelés</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let film of films">
+      <td>{{ film.title}}</td>
+      <td>{{ film.director }}</td>
+      <td>{{ film.rating }}</td>
+      <td>
+
+        <a [routerLink]="['/projection', film.id]">
+          Vetítések
+        </a>
+        <a [routerLink]="['/details', film.id]">
+          Részletek
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
